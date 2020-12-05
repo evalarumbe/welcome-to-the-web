@@ -16,13 +16,32 @@ Go through these for each project, until you've memorized how to do each step an
 
 Until opening a dusty old project folder feels like a cool breeze on a Summer's day.
 
-## Checklist to run through
+## Checklists to run through
+
+### Get comfortable in the file system
 
 - Which directory am I in?
 
+- Is this directory version-controlled?
+  (In other words: is this directory currently a git repo?)
+  (In other words: has git been initialized in this directory?)
+
+- Do I accidentally have any nested repos (git repos inside of git repos)?
+  (if these questions are challenging for your level of Git,
+  then I wouldn't recommend creating nested repos on purpose,
+  but they do often happen by accident and cause problems)
+  
+  Make sure none of the folders above this one (ancestors) are git repos.
+  Make sure none of the folders inside this one (descendants) are git repos.
+  Only the current directory should be a repo.
+  Repos (version-controlled projects) should be siblings, or more distant relations,
+  but not ancestors or descendants of another repo.
+
+### Work on a version-controlled project
+
 - Which branch am I on?
 
-- Am I looking at the latest version?
+- Am I looking at the latest version of my project?
 
 - What were the last few commits?
 
@@ -36,7 +55,7 @@ Until opening a dusty old project folder feels like a cool breeze on a Summer's 
 
 - Does the code run how I'd expect right now?
 
-## Extra checks for projects that have a **package.json** file
+#### Extra checks for projects that have a **package.json** file
 
 - My terminal is open to the same dir as the **package.json** that belongs to my project.
 Open it and check the project info if you're confused between several **package.json** files.
