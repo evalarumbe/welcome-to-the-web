@@ -17,7 +17,7 @@ In the video you can be like "sayHi": "echo heeiiiii" to illustrate what scripts
 
 -->
 
-# CSS pipeline *(look ma, no bundler!)*
+# CSS pipeline
 
 This `package.json` file contains handy scripts that process CSS from dev to production as follows:
 
