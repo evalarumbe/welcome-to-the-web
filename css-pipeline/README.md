@@ -98,11 +98,11 @@ This should update `package.json` to include devDependencies similar to the foll
 
 ### Dev script (keep this running during development)
 
-Every time `main.scss` changes (or any of the partials it's loading), compile SCSS to CSS with a source map.
-
 ```console
 $ npm run dev
 ```
+
+Every time `main.scss` changes (or any of the partials it's loading), compile SCSS to CSS with a source map.
 
 Run this in a terminal that you keep open, so it can run in the background and actively watches for every time you hit 'save' on your Sass files. When you need to stop the process, hit `Ctrl + c` (or close the terminal window). You should stop the process when you're happy with how things look, and you don't need to make any more style changes.
 
@@ -118,8 +118,6 @@ Without the source map, the dev tools would just give us a very unhelpful "lol I
 In `index.html`, it is enough to just link to `style.css`. The browser will detect the source map automatically.
 
 ### Build scripts (run once before shipping to production)
-
-Remove source map because it messes with Autoprefixer
 
 ```console
 $ npm run build
