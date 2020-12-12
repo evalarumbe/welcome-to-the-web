@@ -1,5 +1,5 @@
 {
-  "name": "wip-css-pipeline",
+  "name": "my-project",
   "version": "1.0.0",
   "description": "CSS pipeline",
   "main": "index.html",
@@ -8,16 +8,7 @@
     "prebuild": "rm ./style.css.map && dart-sass --no-source-map ./src/scss/main.scss ./src/no-prefix.css",
     "build": "postcss src/no-prefix.css --use autoprefixer -o ./style.css"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/evalarumbe/wip-css-pipeline.git"
-  },
-  "author": "Eva Larumbe",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/evalarumbe/wip-css-pipeline/issues"
-  },
-  "homepage": "https://github.com/evalarumbe/wip-css-pipeline#readme",
   "browserslist": [
     "cover 99.5% in US",
     "cover 99.5% in DE"
