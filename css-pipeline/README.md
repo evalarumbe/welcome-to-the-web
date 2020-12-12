@@ -140,11 +140,16 @@ This one command will run two scripts in sequence:
 
 ## Troubleshooting
 
-If you get this error after running ```npm run build```
+### Styles won't update while Sass is in watch mode
 
-```console
-rm: ./style.css.map: No such file or directory
-```
+Often this happens after Sass encountered an error (e.g. the file was saved while you were in the middle of writing something, or there was a syntax error).
+
+After you fix the error, you may see that the error is resolved in the console, but silently Sass will stop updating your styles in the browser.
+
+To fix it, **get into the habit of manually stopping and restarting the watch process every time Sass gives you an error**, even if the console looks like it's working again, because often it's not.
+
+### rm: ./style.css.map: No such file or directory
+If you get the above console error after running ```npm run build```
 
 It might be because ```npm run dev``` creates a file that ```npm run build``` expects to delete.
 <!-- TODO: update build script to first check if files exist before attempting to remove them -->
