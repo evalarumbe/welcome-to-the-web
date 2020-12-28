@@ -1,20 +1,16 @@
-
 <!--
-
 HELLO AND WELCOME TO THE TODO
 =============================
 
 GUIDE PEOPLE THROUGH SETTING UP THEIR FIRST EVER PACKAGE.JSON
 Because that is your audience here.
 
-WTF IS THIS node_modules/ thingy? And why do I not want to commit it?
+What is this node_modules/ thingy? And why do I not want to commit it?
 
-SHOW THEM WHAT SCRIPTS TO ADD IN.
-They might have this "test" one already that they don't need just yet
-Outline those in beautiful detail.
-
-In the video you can be like "sayHi": "echo heeiiiii" to illustrate what scripts do
-
+Npm script walkthrough:
+- They might have this "test" one already that they don't need just yet.
+- Add an example script like "sayHi": "echo heeiiiii" to illustrate how they work.
+- Explain how I built these ones and where to find out which args are valid.
 -->
 
 # CSS pipeline
@@ -23,26 +19,28 @@ This `package.json` file contains handy scripts that process CSS from dev to pro
 
 Sass => CSS => Autoprefixed CSS for whichever browsers you want to support
 
-## Why should I care?
+## How can this help me?
 
-Here are some reasons you might have been crying, that this pipeline hopes to help with:
+This pipeline hopes to make these workflow dreams come true:
 
-- I want to code HTML and CSS without trying to figure out what a bundler even is.
-- I want to write Sass because it has nicer features than plain CSS.
-- I want to write modern CSS but still support older browsers as much as possible.
-- I've heard I'm supposed to [add prefixes](https://autoprefixer.github.io/) to my CSS to get this browser support, but I want the prefixing to be handled automatically, so I don't have to think about it.
+- We want to write Sass because it has nicer features than plain CSS.
+- We want to write modern CSS but still support older browsers.
+- We've heard that [vendor prefixes](https://autoprefixer.github.io/) can help with browser support ([with limitations](https://css-tricks.com/css-grid-in-ie-css-grid-and-the-new-autoprefixer/#autoprefixer-still-cant-save-you-from-everything)), but we want the prefixing to be handled automatically, so we don't have to think about it.
 
-<!-- TODO: Will this code make me cry? Pre-requisite knowledge and installed node version -->
+<!-- TODO: Pre-requisite knowledge and installed node version -->
 
 ## File system starting point
 
-Here's what my project directory looks like.
+This pipeline uses [npm scripts](https://docs.npmjs.com/cli/v6/using-npm/scripts) that are provided in [`package.json`](./package.json). If you want them to work out of the box, please set up your file structure as follows. If you want to use another file structure, you may need to edit the paths in each script.
 
-`main.scss` has one job, which is to load [Sass partials](https://sass-lang.com/guide#:~:text=A%20partial%20is%20a%20Sass,used%20with%20the%20%40use%20rule.). No style rules are in this file.
+Here's what my project directory looks like. The parts you'll need to create manually are `src/` (plus everything in it) and `index.html`.
+<!-- TODO: provide boilerplate -->
+
+`main.scss` will have one job, which is to load [Sass partials](https://sass-lang.com/guide#:~:text=A%20partial%20is%20a%20Sass,used%20with%20the%20%40use%20rule.). No style rules are in this file.
 Style rules are defined in partials.
-This project example has just one partial, `_base.scss`, but a real-world project will usually have more.
+This example below has just one partial, `_base.scss`, but a real-world project will usually have more.
 
-The `modules/` dir is optional. We can organise your Sass partials however we like, depending on what structure makes life easier for each project. People have different ways they like to do this, and many have published articles about it. Google *sass file structure something something* for ideas. With practice, you'll find what works for you.
+The `modules/` dir is optional. We can organise our Sass partials however we like, depending on what structure makes life easier for each project. People have different ways they like to do this, and many have published articles about it. For ideas, Google *sass file structure something something*. With practice, you'll find what works for you.
 
 ```fs
 .
@@ -85,7 +83,7 @@ $ npm install --save-dev dart-sass autoprefixer postcss-cli postcss
 
 #### Check it worked
 
-This should update `package.json` to include devDependencies similar to the following (your version numbers may vary, since you'll get the latest):
+This should update `package.json` to include devDependencies similar to the following (your version numbers may vary, since the above command will install the latest):
 
 ```json
   "devDependencies": {
@@ -138,7 +136,7 @@ This one command will run two scripts in sequence:
 
 ## Troubleshooting
 
-### Styles won't update while Sass is in watch mode
+### **Issue:** Styles won't update while Sass is in watch mode
 
 Often this happens after Sass encountered an error (e.g. the file was saved while you were in the middle of writing something, or there was a syntax error).
 
@@ -146,7 +144,7 @@ After you fix the error, you may see that the error is resolved in the console, 
 
 To fix it, **get into the habit of manually stopping and restarting the watch process every time Sass gives you an error**, even if the console looks like it's working again, because often it's not.
 
-### rm: ./style.css.map: No such file or directory
+### **Error message:** rm: ./style.css.map: No such file or directory
 If you get the above console error after running ```npm run build```
 
 It might be because ```npm run dev``` creates a file that ```npm run build``` expects to delete.
