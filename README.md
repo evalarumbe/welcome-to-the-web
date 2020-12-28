@@ -1,5 +1,5 @@
 # Welcome to the Web
 
-These materials are designed to support in-person mentoring around web topics.
+This repo is a collection of assorted training materials that are intended to eventually be incorporated into cohesive courses for junior developers.
 
-We'll be building a WordPress website as a hands-on starter project, and use that as a springboard for a more general understanding of the Internet and the tech industry.
+For now, they might help with a standalone skill or two.
