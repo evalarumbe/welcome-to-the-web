@@ -1,4 +1,4 @@
-# 01. Learn the command line
+# Learn the command line
 
 ## Glossary
 
