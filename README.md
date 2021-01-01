@@ -1,5 +1,5 @@
 # Welcome to the Web
 
-This repo is a collection of assorted training materials that are intended to eventually be incorporated into cohesive courses for junior developers.
+It's been fun, but this repo is being archived!
 
-For now, they might help with a standalone skill or two.
+This material will resurface in its new home, at [codemakesmecry.com](https://www.codemakesmecry.com)
